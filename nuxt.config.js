@@ -1,5 +1,14 @@
+require('dotenv').config()
+
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    host: process.env.NUXT_HOST_ADRESS || '127.0.0.1',
+    port: process.env.NUXT_HOST_PORT || '3000'
+  },
+  telemetry: false,
+  /*
+  ** Global page headers: https://go.nuxtjs.dev/config-head
+  */
   head: {
     title: 'feedStock',
     htmlAttrs: {
@@ -31,7 +40,9 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    // https://github.com/nuxt-community/dotenv-module#readme
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
